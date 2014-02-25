@@ -14,11 +14,12 @@
 <body>
 	<div class="container-fluid">
 		<div class="row fill-height">
-			<div class="grey col-md-12 grid-border"><h1>Homelette <small>From the best chefs in the world directly into your kitchen</small></h1></div>
+			<div class="grey col-md-12 grid-border"><h1>Homelette <small>From the best chefs in the world directly into your kitchen</small></h1>
+			</div>
 		</div>
 		<div class="row ">
-			<div id="leftColumnView"> <!-- leftColumnView Start -->
-				<div class="col-md-2">
+			<div class="col-md-2">
+				<div id="leftColumnView"> <!-- leftColumnView Start -->
 					<h3>My dinner</h3>
 					<div>
 						Number of guests: <span id="numberOfGuests"></span>
@@ -47,16 +48,18 @@
 					<h4 class="text-primary text-center">Total price: <span id="totalPrice"></span></h4>
 					<button class="btn btn-block btn-primary">Confirm dinner</button>
 					<br>
-				</div>
-			</div><!-- leftColumnview end -->
-			<div class="search-bar col-md-10 grid-border">
-				<h2>Select dish</h2>
-				<hr>
-				<div class="row">
-					<div class="col-md-5">
-						<form class="form-inline" role="form">
-							<input type="text" class="form-control" id="search_bar" placeholder="Enter keywords"></input>
-							<input type="submit" value="Search" id="search_button" class="btn btn-warning"></input>
+				</div><!-- leftColumnview end -->
+			</div>
+			<div class="col-md-10 search-bar grid-border"> <!-- Area to the right of left column -->
+				<div id="searchBarView"><!-- start searchBarView-->
+					<h2>Select dish</h2>
+					<hr>
+					<div class="row">
+						<div class="col-md-5">
+							<form class="form-inline" role="form">
+								<input type="text" class="form-control" id="search_bar" placeholder="Enter keywords"></input>
+								<input type="submit" value="Search" id="search_button" class="btn btn-warning"></input>
+							</form>
 						</div>
 						<div class="col-md-2">
 							<select class="form-control">
@@ -64,18 +67,34 @@
 						</div>
 					</div>
 				</div>
-			</div> 
-		</div> <!-- container end -->
+			</div> <!-- searchBarView end-->
+			<div class="col-md-10 grid-border">
+				<div id="courseOverView" class="course-overview"> 
+					<div class="row">
+						<div class="col-md-2">
+							<div class="image-container">
+								<img class="grid-border img-responsive img-thumbnail" src="images/meatballs.jpg"/>
+								<p class="grid-border grey">Meatballs</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> <!-- End this area-->
+	</div> <!-- container end -->
 
-		<!-- jQuery -->
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
-		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
-		<!-- The application JavaScript code -->
-		<script src="js/app.js"></script>
-		<script src="js/model/dinnerModel.js"></script>
-		<script src="js/view/exampleView.js"></script>
-		<script src="js/view/exampleViewController.js"></script>
-	</body>
-	</html>
+	<!-- The application JavaScript code -->
+	<script src="js/app.js"></script>
+	<script src="js/model/dinnerModel.js"></script>
+	<script src="js/view/exampleView.js"></script>
+	<script src="js/view/exampleViewController.js"></script>
+</body>
+</html>
