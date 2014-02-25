@@ -4,7 +4,6 @@ var LeftColumnView = function (container,model) {
 	this.minusButton = container.find("#minusGuest");
 	this.totalPrice = container.find("#totalPrice");
 	this.confirmDinnerButton = container.find("#confirmDinnerButton");
-	// this.confirmButton = container.find("#startButton");
 
 	this.numberOfGuests.html(model.getNumberOfGuests());
 	this.totalPrice.html(model.getTotalMenuPrice());

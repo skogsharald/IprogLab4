@@ -20,11 +20,14 @@ $(function() {
 	var confirmDishView = new ConfirmDishView($('#confirmDishView'), model);
 	var confirmDishViewController = new ConfirmDishViewController(confirmDishView, model);
 
-	// var exampleView = new ExampleView($("#exampleView"),model);
- //   	var exampleViewController = new ExampleViewController(exampleView,model);
- //   	exampleView.makeHidden();
+	var backToEditDinnerView = new BackToEditDinnerView($('#backToEditDinnerView'), model);
+	var backToEditDinnerViewController = new BackToEditDinnerViewController(confirmDishView, model);
 
-   	window.stage = "starter";
+	var dinnerImagesView = new DinnerImagesView($('#dinnerImagesView'), model);
+	var dinnerImagesViewController = new DinnerImagesViewController(confirmDishView, model);
+
+	var printPrepView = new PrintPrepView($('#printPrepView'), model);
+
 	window.startApp = function(){
 		homeView.makeHidden();
 		leftColumnView.makeVisible();
@@ -39,6 +42,22 @@ $(function() {
 		confirmDishView.makeVisible();
 	}
 
+	window.startDinnerOverView = function(){
+		searchBarView.makeHidden();
+		courseOverView.makeHidden();
+		confirmDishView.makeHidden();
+		leftColumnView.makeHidden();
+		backToEditDinnerView.makeVisible();
+		dinnerImagesView.makeVisible();
+	}
+
+	window.startPrintPrep = function(){
+		dinnerImagesView.makeHidden();
+		printPrepView.makeVisible();
+	}
+
 	window.startApp();
-	// window.startConfirmDish();
+	window.startConfirmDish();
+	window.startDinnerOverView();
+	window.startPrintPrep();
 });
