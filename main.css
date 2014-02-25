@@ -69,3 +69,19 @@
 .btn-middle{
 	margin-top: 1.5%;
 }
+
+.left-border {
+	border-left: 1px solid #ccc;
+	padding-top: 30%;
+}
+
+.top-border {
+	border-top: 1px solid #ccc;
+}
+
+.print-button {
+	margin-top: 2%;
+	padding: 0.5% 15% 0.5% 15%;
+	position: relative;
+	left: 30%;
+}
