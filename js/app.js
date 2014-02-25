@@ -14,6 +14,9 @@ $(function() {
 	var courseOverView = new CourseOverView($("#courseOverView"), model);
 	var courseOverViewController = new CourseOverViewController($("#courseOverView"), model);
 
+	var searchBarView = new SearchBarView($('#searchBarView'), model);
+	var searchBarViewController = new SearchBarViewController(searchBarView, model);
+
 	// var exampleView = new ExampleView($("#exampleView"),model);
  //   	var exampleViewController = new ExampleViewController(exampleView,model);
  //   	exampleView.makeHidden();
@@ -24,6 +27,8 @@ $(function() {
 	window.startApp = function(){
 		homeView.makeHidden();
 		leftColumnView.makeVisible();
+		courseOverView.makeVisible();
+		searchBarView.makeVisible();
 		$("body").removeClass("background-image");
 	}
 });

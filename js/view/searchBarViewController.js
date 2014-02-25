@@ -1,3 +1,3 @@
-var searchBarViewController = function(view, model) {
+var SearchBarViewController = function(view, model) {
 
 }
