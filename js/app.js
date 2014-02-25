@@ -17,6 +17,9 @@ $(function() {
 	var searchBarView = new SearchBarView($('#searchBarView'), model);
 	var searchBarViewController = new SearchBarViewController(searchBarView, model);
 
+	var confirmDishView = new ConfirmDishView($('#confirmDishView'), model);
+	var confirmDishViewController = new ConfirmDishViewController(confirmDishView, model);
+
 	// var exampleView = new ExampleView($("#exampleView"),model);
  //   	var exampleViewController = new ExampleViewController(exampleView,model);
  //   	exampleView.makeHidden();
@@ -29,5 +32,13 @@ $(function() {
 		searchBarView.makeVisible();
 		$("body").removeClass("background-image");
 	}
+
+	window.startConfirmDish = function(){
+		courseOverView.makeHidden();
+		searchBarView.makeHidden()
+		confirmDishView.makeVisible();
+	}
+
 	window.startApp();
+	// window.startConfirmDish();
 });
