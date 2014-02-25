@@ -20,6 +20,7 @@ var CourseOverView = function (container,model) {
 		var col = $("<div>").addClass("col-md-2");
 		dish = dishes[i]
 		container = $("<div>").addClass("image-container").attr("id", dish.id);
+		container.attr("onclick", "window.imageClick(this)");
 		imgTag = $("<img>").attr("src", "images/"+dish.image).addClass("grid-border").addClass("img-responsive").addClass("img-thumbnail");
 		container.append(imgTag);
 		label = $("<p>").addClass("center-label").addClass("grid-border").addClass("grey").html(dish.name);
@@ -50,6 +51,7 @@ var CourseOverView = function (container,model) {
 			var col = $("<div>").addClass("col-md-2");
 			dish = dishes[i]
 			container = $("<div>").addClass("image-container").attr("id", dish.id);
+			container.attr("onclick", "window.imageClick(this)");
 			imgTag = $("<img>").attr("src", "images/"+dish.image).addClass("grid-border").addClass("img-responsive").addClass("img-thumbnail");
 			container.append(imgTag);
 			label = $("<p>").addClass("center-label").addClass("grid-border").addClass("grey").html(dish.name);

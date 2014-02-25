@@ -53,6 +53,7 @@
 .image-container {
 	height:100%;
 	width:150px;
+	cursor:pointer;
 }
 
 .center-label {

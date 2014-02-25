@@ -3,10 +3,10 @@ var SearchBarViewController = function(view, model) {
 	// Subscribe to change in values in the select field
 	view.selectTypes.on('change', function(){
 		var thisvalue = $(this).find("option:selected").text().toLowerCase();
-		console.log(model.getAllDishes(thisvalue));
 		window.changeCoursesInCourseOverView(model.getAllDishes(thisvalue));
 	});
 
+	// Set onclick for the search button
 	view.searchButton.click(function(event){
 		// Make sure page doesn't reload
 		event.preventDefault();
