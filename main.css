@@ -7,5 +7,20 @@
 }
 
 .yellow {
-	background: #F2DFA0;
+	background: rgba(242, 223, 160, 0.8);
+}
+
+.welcome {
+	margin-top:10%;
+	margin-bottom:20%;
+	margin-left:2%;
+	background: rgba(255, 255, 255, 0.8);
+	border-radius:10px;
+	padding-bottom:20px;
+}
+
+.start-button {
+	width:40%;
+	background: rgb(242, 223, 160);
+	border-radius:10px;
 }
