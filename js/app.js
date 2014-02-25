@@ -9,7 +9,7 @@ $(function() {
 	var homeViewController = new HomeViewController(homeView, model);
 
 	var leftColumnView = new LeftColumnView($("#leftColumnView"), model);
-	var leftColumnViewController = new LeftColumnViewController(homeView, model);
+	var leftColumnViewController = new LeftColumnViewController(leftColumnView, model);
 
 	var courseOverView = new CourseOverView($("#courseOverView"), model);
 	var courseOverViewController = new CourseOverViewController($("#courseOverView"), model);
@@ -20,8 +20,6 @@ $(function() {
 	// var exampleView = new ExampleView($("#exampleView"),model);
  //   	var exampleViewController = new ExampleViewController(exampleView,model);
  //   	exampleView.makeHidden();
-
-
 
    	window.stage = "starter";
 	window.startApp = function(){
