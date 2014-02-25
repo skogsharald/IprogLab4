@@ -8,6 +8,9 @@ $(function() {
 	var homeView = new HomeView($("#homeView"), model);
 	var homeViewController = new HomeViewController(homeView, model);
 
+	var leftColumnView = new LeftColumnView($("#leftColumnView"), model);
+	var leftColumnViewController = new LeftColumnViewController(homeView, model);
+
 	var exampleView = new ExampleView($("#exampleView"),model);
    	var exampleViewController = new ExampleViewController(exampleView,model);
    	exampleView.makeHidden();
@@ -17,7 +20,7 @@ $(function() {
    	window.stage = "starter";
 	window.startApp = function(){
 		homeView.makeHidden();
+		leftColumnView.makeVisible();
 		$("body").removeClass("background-image");
 	}
-	
 });
