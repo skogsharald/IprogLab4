@@ -6,12 +6,9 @@
 	background-size: cover;   
 }
 
-.yellow-transparent {
-	background: rgba(242, 223, 160, 0.8);
-}
 
 .grey {
-	background: #D3D3D3;
+	background: rgba(211, 211, 211, 0.8);
 }
 .search-bar {
 	background: rgb(242, 223, 160);
