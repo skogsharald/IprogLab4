@@ -29,4 +29,5 @@ $(function() {
 		searchBarView.makeVisible();
 		$("body").removeClass("background-image");
 	}
+	window.startApp();
 });

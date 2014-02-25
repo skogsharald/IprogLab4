@@ -3,9 +3,19 @@ var LeftColumnView = function (container,model) {
 	this.plusButton = container.find("#plusGuest");
 	this.minusButton = container.find("#minusGuest");
 	this.totalPrice = container.find("#totalPrice");
+	this.confirmDinnerButton = container.find("#confirmDinnerButton");
 	// this.confirmButton = container.find("#startButton");
 
-	//No need to implement observer, the view is not affected by the model.
+	this.numberOfGuests.html(model.getNumberOfGuests());
+	this.totalPrice.html(model.getTotalMenuPrice());
+
+	model.addObserver(this);
+	
+	//This function gets called when there is a change at the model
+	this.update = function(arg){
+		this.numberOfGuests.html(model.getNumberOfGuests());
+		this.totalPrice.html(model.getTotalMenuPrice());
+	}
 
 
 	this.makeHidden = function(){
