@@ -11,9 +11,12 @@ $(function() {
 	var leftColumnView = new LeftColumnView($("#leftColumnView"), model);
 	var leftColumnViewController = new LeftColumnViewController(homeView, model);
 
-	var exampleView = new ExampleView($("#exampleView"),model);
-   	var exampleViewController = new ExampleViewController(exampleView,model);
-   	exampleView.makeHidden();
+	var courseOverView = new CourseOverView($("#courseOverView"), model);
+	var courseOverViewController = new CourseOverViewController($("#courseOverView"), model);
+
+	// var exampleView = new ExampleView($("#exampleView"),model);
+ //   	var exampleViewController = new ExampleViewController(exampleView,model);
+ //   	exampleView.makeHidden();
 
 
 
