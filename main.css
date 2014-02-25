@@ -58,6 +58,10 @@
 	width:150px;
 }
 
+.center-label {
+	text-align: center;
+}
+
 .print-img{
 	margin: 20px 15% 5% 15%;
 }
@@ -72,7 +76,7 @@
 
 .left-border {
 	border-left: 1px solid #ccc;
-	padding-top: 30%;
+	padding-top: 27%;
 }
 
 .top-border {
