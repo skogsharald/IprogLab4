@@ -6,8 +6,19 @@
     background-size: cover;   
 }
 
-.yellow {
+.yellow-transparent {
 	background: rgba(242, 223, 160, 0.8);
+}
+.search-bar {
+	background: rgb(242, 223, 160);
+	padding-bottom:2%;
+	padding-left:5%;
+}
+
+.search-button{
+	color:white;
+	background: rgb(208, 31, 60);
+	border-radius:10px;
 }
 
 .welcome {
