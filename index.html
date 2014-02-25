@@ -11,16 +11,33 @@
 
   </head>
   <body>
-	<div class="container">
-		<h1>Dinner planner</h1>
-		<div id="exampleView">
-			<div>
-				Number of guests: <span id="numberOfGuests"></span>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12"><h1>Homefuckinglette <small>From the best fuckfaces in the world</small></h1></div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-2">
+				<h3>My dinner</h3>
+				<div id="exampleView">
+					<div>
+						Number of guests: <span id="numberOfGuests"></span>
+					</div>
+					<div>
+					    <button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
+						<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
+					</div>
+					<div class="text-primary">Total menu price: <span id="totalPrice"><span></div>
+				</div>
+				<br>
+			<table class="table">
+				<tr>
+					<th>Dish name</th>
+					<th>Cost</th>
+				</tr>
+			</table>
 			</div>
-			<div>
-				<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
-			    <button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
-			</div>
+
 		</div>
 	</div>
 
