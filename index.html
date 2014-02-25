@@ -1,56 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Basic Drawing App</title>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Homelette</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
 
-  </head>
-  <body>
+</head>
+<body>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="yellow col-md-12"><h1>Homefuckinglette <small>From the best fuckfaces in the world</small></h1></div>
+			<div class="yellow col-md-12 grid-border"><h1>Homefuckinglette <small>From the best fuckfaces in the world</small></h1></div>
 		</div>
-
-		<div class="row">
-			<div class="col-md-2">
-				<h3>My dinner</h3>
-				<div id="exampleView">
+		<div id="exampleView"> <!-- exampleView Start -->
+			<div class="row">
+				<div class="col-md-2 grid-border fill-height">
+					<h3>My dinner</h3>
 					<div>
 						Number of guests: <span id="numberOfGuests"></span>
 					</div>
 					<div>
-					    <button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
+						<button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
 						<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
 					</div>
-					<div class="text-primary">Total menu price: <span id="totalPrice"><span></div>
+					<br>
+					<table class="table">
+						<tr>
+							<th>Dish name</th>
+							<th>Cost</th>
+						</tr>
+						<!-- Hard coded rows! -->
+						<tr>
+							<td>Lasagna</td>
+							<td>77.50</td>
+						</tr>
+						<tr>
+							<td>Pending</td>
+							<td>0.00</td>
+						</tr>
+					</table>
+					<hr>
+					<h4 class="text-primary text-center">Total price: <span id="totalPrice"></span></h4>
+					<button class="center-block btn btn-primary">Confirm dinner</button>
+					<br>
 				</div>
-				<br>
-			<table class="table">
-				<tr>
-					<th>Dish name</th>
-					<th>Cost</th>
-				</tr>
-			</table>
-			</div>
+			</div><!-- left column end --> 
+		</div> <!-- exampleview end -->
+	</div> <!-- container end -->
 
-		</div>
-	</div>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
 	<!-- The application JavaScript code -->
 	<script src="js/app.js"></script>
 	<script src="js/model/dinnerModel.js"></script>
 	<script src="js/view/exampleView.js"></script>
 	<script src="js/view/exampleViewController.js"></script>
-  </body>
+</body>
 </html>
