@@ -9,6 +9,10 @@
 .yellow-transparent {
 	background: rgba(242, 223, 160, 0.8);
 }
+
+.grey {
+	background: #D3D3D3;
+}
 .search-bar {
 	background: rgb(242, 223, 160);
 	padding-bottom:2%;
