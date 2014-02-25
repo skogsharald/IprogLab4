@@ -1,5 +1,9 @@
 var LeftColumnView = function (container,model) {
-	this.confirmButton = container.find("#startButton");
+	this.numberOfGuests = container.find("#numberOfGuests");
+	this.plusButton = container.find("#plusGuest");
+	this.minusButton = container.find("#minusGuest");
+	this.totalPrice = container.find("#totalPrice");
+	// this.confirmButton = container.find("#startButton");
 
 	//No need to implement observer, the view is not affected by the model.
 
