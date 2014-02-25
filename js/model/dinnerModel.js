@@ -96,6 +96,10 @@ var DinnerModel = function() {
 		}
 	}
 
+	this.getTypes = function () {
+		return ["Starter", "Main Dish", "Dessert"];
+	}
+
 
 	// the dishes variable contains an array of all the 
 	// dishes in the database. each dish has id, name, type,

@@ -66,12 +66,12 @@
 					<div class="row">
 						<div class="col-md-5">
 							<form class="form-inline" role="form">
-								<input type="text" class="form-control" id="search_bar" placeholder="Enter keywords"></input>
-								<button id="search_button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Search</button>
+								<input type="text" class="form-control" id="searchField" placeholder="Enter keywords"></input>
+								<button id="searchButton" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Search</button>
 							</form>
 						</div>
 						<div class="col-md-2">
-							<select class="form-control">
+							<select class="form-control" id="selectTypes">
 							</select>
 						</div>
 					</div>
@@ -80,18 +80,8 @@
 			<!-- SearchBarView end-->
 			<!-- courseOverView-->
 			<div id="courseOverView" class="no-display">
-				<div class="col-md-10 grid-border course-overview">
-					<div class="row">
-						<div class="col-md-2">
-							<div class="image-container">
-								<img class="grid-border img-responsive img-thumbnail" src="images/meatballs.jpg"/>
-								<p class="center-label grid-border grey">Meatballs</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								</p>
-							</div>
-						</div>
-					</div>
+				<div class="col-md-10 grid-border course-overview" id="coursesContainer">
+					<!-- DYNAMIC CONTENT GOES HERE -->
 				</div>
 			</div>
 			<!-- courseOverView end-->

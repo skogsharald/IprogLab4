@@ -56,8 +56,12 @@ $(function() {
 		printPrepView.makeVisible();
 	}
 
-	window.startApp();
-	window.startConfirmDish();
-	window.startDinnerOverView();
-	window.startPrintPrep();
+	window.changeCoursesInCourseOverView = function(dishes){
+		courseOverView.changeDishes(dishes);
+	}
+
+	//window.startApp();
+	//window.startConfirmDish();
+	//window.startDinnerOverView();
+	//window.startPrintPrep();
 });
