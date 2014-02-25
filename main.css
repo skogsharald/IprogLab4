@@ -1,3 +1,11 @@
+html {
+    background: url('images/family.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;   
+}
+
 .yellow {
 	background: #F2DFA0;
 }
