@@ -10,6 +10,10 @@ var LeftColumnView = function (container,model) {
 			var tdPrice = $("<td>");
 			var price = model.getDishPrice(menu[i].id);
 			tdPrice.html(price*model.getNumberOfGuests());
+			var button = $("<button>");
+			var span = $("<span>");
+			span.addClass('glyphicon glyphicon-remove');
+			tdPrice.append(span);
 			tr.append(tdName);
 			tr.append(tdPrice);
 			this.menuTable.append(tr);
