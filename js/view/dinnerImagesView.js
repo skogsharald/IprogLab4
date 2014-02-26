@@ -68,13 +68,11 @@ var DinnerImagesView = function (container,model) {
 	}
 
 	this.update = function(){
-		container.html("");
+		firstRow.html("");
 		var dishes = model.getFullMenu();
 		var totalCost = model.getTotalMenuPrice();
 
 		// Add the first row which contains the two columns 
-		var firstRow = $("<div>").addClass("print-prep row");
-
 		// Populate the dinner images view
 		var dinnerCol = $("<div>").addClass("col-md-6 col-md-offset-3");
 		var imgRow = $("<div>").addClass("centerImgRow row");
@@ -109,17 +107,5 @@ var DinnerImagesView = function (container,model) {
 		// Append the total cost column and the dinner images colum to the first row
 		firstRow.append(dinnerCol);
 		firstRow.append(costCol);
-
-		// Add the second row which contains the get full recipe button, 
-		// also populate the button column and append it to the row.
-		var secondRow = $("<div>").addClass("top-border row");
-		var buttonCol = $("<div>").addClass("col-md-12");
-		var printButton = $("<button>").addClass("print-button btn btn-primary").attr("id", "dinnerOverViewButton").html("Print Full Recipe");
-		buttonCol.append(printButton);
-		secondRow.append(buttonCol);
-
-		container.append(firstRow);
-		container.append(secondRow);
-
 	}
 }
