@@ -19,15 +19,15 @@ var CourseOverView = function (container,model) {
 		}
 		var col = $("<div>").addClass("col-md-2");
 		dish = dishes[i]
-		container = $("<div>").addClass("image-container").attr("id", dish.id);
-		container.attr("onclick", "window.imageClick(this)");
+		newContainer = $("<div>").addClass("image-container").attr("id", dish.id);
+		newContainer.attr("onclick", "window.imageClick(this)");
 		imgTag = $("<img>").attr("src", "images/"+dish.image).addClass("grid-border").addClass("img-responsive").addClass("img-thumbnail");
-		container.append(imgTag);
+		newContainer.append(imgTag);
 		label = $("<p>").addClass("center-label").addClass("grid-border").addClass("grey").html(dish.name);
-		container.append(label);
+		newContainer.append(label);
 		description = $("<p>").html(dish.description);
-		container.append(description);
-		col.append(container);
+		newContainer.append(description);
+		col.append(newContainer);
 		row.append(col);
 	}
 	this.coursesContainer.append(row);
@@ -50,15 +50,15 @@ var CourseOverView = function (container,model) {
 			}
 			var col = $("<div>").addClass("col-md-2");
 			dish = dishes[i]
-			container = $("<div>").addClass("image-container").attr("id", dish.id);
-			container.attr("onclick", "window.imageClick(this)");
+			newContainer = $("<div>").addClass("image-container").attr("id", dish.id);
+			newContainer.attr("onclick", "window.imageClick(this)");
 			imgTag = $("<img>").attr("src", "images/"+dish.image).addClass("grid-border").addClass("img-responsive").addClass("img-thumbnail");
-			container.append(imgTag);
+			newContainer.append(imgTag);
 			label = $("<p>").addClass("center-label").addClass("grid-border").addClass("grey").html(dish.name);
-			container.append(label);
+			newContainer.append(label);
 			description = $("<p>").html(dish.description);
-			container.append(description);
-			col.append(container);
+			newContainer.append(description);
+			col.append(newContainer);
 			row.append(col);
 		}
 		this.coursesContainer.append(row);
