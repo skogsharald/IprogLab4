@@ -4,6 +4,8 @@ var DinnerModel = function() {
 	var menu = [];
 	var numberOfGuests = 1; //set default number of guests
 	menu['starter'] = 1; //set a starter to the menu, to use for testing
+	menu['main dish'] = 100;
+	menu['dessert'] = 200;
 
 
 	this.setNumberOfGuests = function(num) {
@@ -51,6 +53,7 @@ var DinnerModel = function() {
 		return sum;
 	}
 
+
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
@@ -88,12 +91,22 @@ var DinnerModel = function() {
 	}
 
 	//function that returns a dish of specific ID
-	this.getDish = function (id) {
+	this.getDish = function(id) {
 	  for(key in dishes){
-			if(dishes[key].id == id) {
+			if(dishes[key].id === id) {
 				return dishes[key];
 			}
 		}
+	}
+
+	this.getDishPrice = function(id) {
+		var dish = this.getDish(id);
+		var ingredients = dish.ingredients;
+		var price = 0;
+		for (var i = 0; i < ingredients.length; i++) {
+			price += ingredients[i].price;
+		};
+		return price;
 	}
 
 	this.getTypes = function () {

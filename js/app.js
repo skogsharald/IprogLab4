@@ -65,8 +65,8 @@ $(function() {
 		courseOverViewController.imageClick(container);
 	}
 
-	//window.startApp();
-	//window.startConfirmDish();
-	//window.startDinnerOverView();
-	//window.startPrintPrep();
+	window.startApp();
+	// window.startConfirmDish();
+	// window.startDinnerOverView();
+	// window.startPrintPrep();
 });
