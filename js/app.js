@@ -45,7 +45,7 @@ $(function() {
 		courseOverView.makeHidden();
 		searchBarView.makeHidden()
 		confirmDishView.makeVisible();
-		confrimDishView.selectedDish(selectedDish);
+		//confirmDishView.selectedDish(selectedDish);
 	}
 
 	window.startDinnerOverView = function(){
@@ -66,13 +66,8 @@ $(function() {
 		courseOverView.changeDishes(dishes);
 	}
 
-
 	window.startApp();
 	window.startConfirmDish();
 	window.startDinnerOverView();
-<<<<<<< HEAD
 	//window.startPrintPrep();
-=======
-/*	window.startPrintPrep();*/
->>>>>>> Added the total cost column in the dinner images view.
 });

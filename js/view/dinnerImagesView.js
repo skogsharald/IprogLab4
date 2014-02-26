@@ -11,7 +11,6 @@ var DinnerImagesView = function (container,model) {
 	var imgRow = $("<div>").addClass("row");
 
 	for(i = 0; i < dishes.length; i++) {
-		console.log("For-loop");
 		var dish = dishes[i];
 		var imgCol;
 		var imgContainer;
@@ -22,8 +21,8 @@ var DinnerImagesView = function (container,model) {
 		imgContainer = $("<div>").addClass("image-container");
 		imgTag = $("<img>").attr("src", "images/"+dish.image).addClass("grid-border").addClass("img-responsive").addClass("img-thumbnail");
 		label = $("<p>").addClass("center-label").addClass("grid-border").addClass("grey").html(dish.name);
-		//Pris/dish, wait for Dexters function.
-		courseCost = $("<p>").html("Pris");
+		var dishPrice = model.getDishPrice(dish.id);
+		courseCost = $("<p>").html(dishPrice);
 		imgContainer.append(imgTag);
 		imgContainer.append(label);
 		imgContainer.append(courseCost);
