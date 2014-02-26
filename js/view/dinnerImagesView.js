@@ -8,7 +8,7 @@ var DinnerImagesView = function (container,model) {
 
 	// Populate the dinner images view
 	var dinnerCol = $("<div>").addClass("col-md-6 col-md-offset-3");
-	var imgRow = $("<div>").addClass("row");
+	var imgRow = $("<div>").addClass("centerImgRow row");
 
 	for(i = 0; i < dishes.length; i++) {
 		var dish = dishes[i];
@@ -22,7 +22,7 @@ var DinnerImagesView = function (container,model) {
 		imgTag = $("<img>").attr("src", "images/"+dish.image).addClass("grid-border").addClass("img-responsive").addClass("img-thumbnail");
 		label = $("<p>").addClass("center-label").addClass("grid-border").addClass("grey").html(dish.name);
 		var dishPrice = model.getDishPrice(dish.id);
-		courseCost = $("<p>").html(dishPrice);
+		courseCost = $("<p>").html(dishPrice + " SEK");
 		imgContainer.append(imgTag);
 		imgContainer.append(label);
 		imgContainer.append(courseCost);
@@ -34,7 +34,7 @@ var DinnerImagesView = function (container,model) {
 
 	// Populate the total cost column
 	var costCol = $("<div>").addClass("left-border col-md-1");
-	totalCost = $("<p>").html("Total: <br>" + totalCost);
+	totalCost = $("<p>").html("Total: <br>" + totalCost + " SEK");
 	costCol.append(totalCost);
 
 	// Append the total cost column and the dinner images colum to the first row

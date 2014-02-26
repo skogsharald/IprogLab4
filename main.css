@@ -59,15 +59,15 @@
 	text-align: center;
 }
 
-.print-img{
+.print-img {
 	margin: 20px 15% 5% 15%;
 }
 
-.print-prep{
+.print-prep {
 	margin-top: 25px;
 }
 
-.btn-middle{
+.btn-middle {
 	margin-top: 1.5%;
 }
 
@@ -87,6 +87,10 @@
 	left: 30%;
 }
 
-.no-display{
+.no-display {
 	display:none;
 }
+
+.centerImgRow {
+	margin-top: 15%;
+}  
