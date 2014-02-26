@@ -23,6 +23,7 @@ var LeftColumnView = function (container,model) {
 	this.minusButton = container.find("#minusGuest");
 	this.totalPrice = container.find("#totalPrice");
 	this.confirmDinnerButton = container.find("#confirmDinnerButton");
+	this.removeDishesButton = container.find("#removeDishesButton");
 	this.menuTable = container.find("#menuTable");
 
 	this.numberOfGuests.html(model.getNumberOfGuests());
@@ -33,6 +34,15 @@ var LeftColumnView = function (container,model) {
 	model.addObserver(this);
 	//This function gets called when there is a change at the model
 	this.update = function(arg){
+		if (model.getFullMenu().length == 0) {
+			this.removeDishesButton.addClass('disabled');
+			this.confirmDinnerButton.addClass('disabled');
+
+		}else{
+			this.removeDishesButton.removeClass('disabled');
+			this.confirmDinnerButton.removeClass('disabled');
+
+		};
 		this.updateMenuTable();
 		this.numberOfGuests.html(model.getNumberOfGuests());
 		this.totalPrice.html(model.getTotalMenuPrice() + " SEK");

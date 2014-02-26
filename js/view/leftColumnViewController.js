@@ -11,5 +11,11 @@ var LeftColumnViewController = function (view, model) {
 		window.startDinnerOverView();
 	});
 
+	view.removeDishesButton.click(function() {
+		var menu = model.getFullMenu();
+		for(key in menu) {
+			model.removeDishFromMenu(menu[key].id);
+		}
+	});
 
 }
