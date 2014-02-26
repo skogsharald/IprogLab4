@@ -6,7 +6,6 @@
 	background-size: cover;   
 }
 
-
 .grey {
 	background: rgba(211, 211, 211, 0.8);
 }
@@ -52,7 +51,6 @@
 .image-container {
 	height:100%;
 	width:150px;
-	cursor:pointer;
 }
 
 .center-label {

@@ -4,6 +4,14 @@ var SearchBarView = function(container, model){
 	this.selectTypes = container.find("#selectTypes");
 	this.select = container.find("#selectTypes")[0];
 
+	//Populate select field
+	types = model.getTypes();
+	for(var i = 0; i<types.length; i++){
+		var opt = $("<option>");
+		opt.attr("value", types[i]);
+		opt.html(types[i]);
+		this.selectTypes.append(opt);
+	}
 
 
 	this.makeHidden = function(){
@@ -16,13 +24,6 @@ var SearchBarView = function(container, model){
 		container.fadeIn(1000, function() {
 			//Animation complete
 		});
-		//Populate select field
-		types = model.getTypes();
-		for(var i = 0; i<types.length; i++){
-			var opt = $("<option>");
-			opt.attr("value", types[i]);
-			opt.html(types[i]);
-			this.selectTypes.append(opt);
-		}
+		
 	}
 }

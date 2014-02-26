@@ -22,6 +22,7 @@ var CourseOverView = function (container,model) {
 		var col = $("<div>").addClass("col-md-2");
 		dish = dishes[i]
 		newContainer = $("<div>").addClass("image-container").attr("id", dish.id);
+		newContainer.attr("style", "cursor:pointer");
 		imgTag = $("<img>").attr("src", "images/"+dish.image).addClass("grid-border img-responsive img-thumbnail");
 		newContainer.append(imgTag);
 		label = $("<p>").addClass("center-label").addClass("grid-border grey").html(dish.name);
@@ -60,9 +61,9 @@ var CourseOverView = function (container,model) {
 			dish = dishes[i]
 			newContainer = $("<div>").addClass("image-container").attr("id", dish.id);
 			newContainer.attr("style", "cursor:pointer");
-			imgTag = $("<img>").attr("src", "images/"+dish.image).addClass("grid-border").addClass("img-responsive").addClass("img-thumbnail");
+			imgTag = $("<img>").attr("src", "images/"+dish.image).addClass("grid-border img-responsive img-thumbnail");
 			newContainer.append(imgTag);
-			label = $("<p>").addClass("center-label").addClass("grid-border").addClass("grey").html(dish.name);
+			label = $("<p>").addClass("center-label").addClass("grid-border grey").html(dish.name);
 			newContainer.append(label);
 			description = $("<p>").html(dish.description);
 			newContainer.append(description);
