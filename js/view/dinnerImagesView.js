@@ -10,7 +10,6 @@ var DinnerImagesView = function (container,model) {
 	var dinnerCol = $("<div>").addClass("col-md-6 col-md-offset-3");
 	var imgRow = $("<div>").addClass("row");
 
-
 	for(i = 0; i < dishes.length; i++) {
 		console.log("For-loop");
 		var dish = dishes[i];
