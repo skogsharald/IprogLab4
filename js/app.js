@@ -68,7 +68,7 @@ $(function() {
 
 
 	window.startApp();
-	// window.startConfirmDish();
-	// window.startDinnerOverView();
-	// window.startPrintPrep();
+	window.startConfirmDish();
+	window.startDinnerOverView();
+	//window.startPrintPrep();
 });
