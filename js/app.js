@@ -66,8 +66,13 @@ $(function() {
 		courseOverView.changeDishes(dishes);
 	}
 
+	// TODO: is this a good way?
+	window.imageClick = function(container){
+		courseOverViewController.imageClick(container);
+	}
+
 	window.startApp();
 	window.startConfirmDish();
 	window.startDinnerOverView();
-	//window.startPrintPrep();
+	//window.startPrintPrep();	
 });
