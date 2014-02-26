@@ -47,6 +47,13 @@ $(function() {
 		confirmDishView.setSelectedDish(selectedDish);
 	}
 
+	window.backFromConfirmDishView = function(){
+		confirmDishView.makeHidden();
+		searchBarView.makeVisible();
+		courseOverView.makeVisible();
+		leftColumnView.makeVisible();
+	}
+
 	window.startDinnerOverView = function(){
 		searchBarView.makeHidden();
 		courseOverView.makeHidden();
@@ -60,6 +67,7 @@ $(function() {
 		dinnerImagesView.makeHidden();
 		printPrepView.makeVisible();
 	}
+
 
 	window.changeCoursesInCourseOverView = function(dishes){
 		courseOverView.changeDishes(dishes);
