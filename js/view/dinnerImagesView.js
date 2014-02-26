@@ -21,7 +21,7 @@ var DinnerImagesView = function (container,model) {
 		imgContainer = $("<div>").addClass("image-container");
 		imgTag = $("<img>").attr("src", "images/"+dish.image).addClass("grid-border").addClass("img-responsive").addClass("img-thumbnail");
 		label = $("<p>").addClass("center-label").addClass("grid-border").addClass("grey").html(dish.name);
-		var dishPrice = model.getDishPrice(dish.id);
+		var dishPrice = model.getDishPrice(dish.id)*model.getNumberOfGuests();
 		courseCost = $("<p>").html(dishPrice + " SEK");
 		imgContainer.append(imgTag);
 		imgContainer.append(label);
