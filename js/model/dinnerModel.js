@@ -7,7 +7,6 @@ var DinnerModel = function() {
 	menu['main dish'] = 100;
 	menu['dessert'] = 200;
 
-
 	this.setNumberOfGuests = function(num) {
 		if(num>0) {
 			numberOfGuests = num;

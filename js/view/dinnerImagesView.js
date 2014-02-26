@@ -1,23 +1,15 @@
 var DinnerImagesView = function (container,model) {
 
 	var dishes = model.getFullMenu();
-	var rowLimit = 0;
-	var imgRow;
+	var totalCost = model.getTotalMenuPrice();
 
-	// <div class="print-prep row">
-	// 	<div class="col-md-6 col-md-offset-3">
-	// 		<div class="row">
-				// <div class="col-md-4">
-					// <div class="image-container">
-			/*			<img class="grid-border img-responsive img-thumbnail" src="images/toast.jpg"/>
-						<p class="center-label grid-border grey">Meatballs</p>
-						<p>TOTAL COST</p>
-					</div>
-				</div>
-			</div> <!-- row end -->*/
+	// Add the first row which contains the two columns 
+	var firstRow = $("<div>").addClass("print-prep row");
 
-	var row = $("<div>").addClass("print-prep row");
+	// Populate the dinner images view
 	var dinnerCol = $("<div>").addClass("col-md-6 col-md-offset-3");
+	var imgRow = $("<div>").addClass("row");
+
 
 	for(i = 0; i < dishes.length; i++) {
 		console.log("For-loop");
@@ -27,46 +19,40 @@ var DinnerImagesView = function (container,model) {
 		var imgTag;
 		var label;
 
-		if(rowLimit==0) {
-			console.log("rowLimit = 0");
-			imgRow = $("<div>").addClass("row");
-		}
-
-		if(rowLimit<3) {
-			console.log("rowLimit < 3");
-			imgCol = $("<div>").addClass("col-md-4");
-			imgContainer = $("<div>").addClass("image-container");
-			imgTag = $("<img>").attr("src", "images/"+dish.image).addClass("grid-border").addClass("img-responsive").addClass("img-thumbnail");
-			label = $("<p>").addClass("center-label").addClass("grid-border").addClass("grey").html(dish.name);
-			//Pris/dish, wait for Dexters function.
-			totalCost = $("<p>").html("Pris");
-			imgContainer.append(imgTag);
-			imgContainer.append(label);
-			imgContainer.append(totalCost);
-			imgCol.append(imgContainer);
-			imgRow.append(imgCol);
-			rowLimit++;
-		} else {
-			dinnerCol.append(imgRow);
-			rowlimit = 0;
-		}
+		imgCol = $("<div>").addClass("col-md-4");
+		imgContainer = $("<div>").addClass("image-container");
+		imgTag = $("<img>").attr("src", "images/"+dish.image).addClass("grid-border").addClass("img-responsive").addClass("img-thumbnail");
+		label = $("<p>").addClass("center-label").addClass("grid-border").addClass("grey").html(dish.name);
+		//Pris/dish, wait for Dexters function.
+		courseCost = $("<p>").html("Pris");
+		imgContainer.append(imgTag);
+		imgContainer.append(label);
+		imgContainer.append(courseCost);
+		imgCol.append(imgContainer);
+		imgRow.append(imgCol);	
 	}
 
-	// Append imgRow even if the whole row is not full (contains three courses)
-	if(rowLimit<3) {
-		dinnerCol.append(imgRow);
-	}
+	dinnerCol.append(imgRow);
 
-	row.append(dinnerCol);
-	container.append(row);
+	// Populate the total cost column
+	var costCol = $("<div>").addClass("left-border col-md-1");
+	totalCost = $("<p>").html("Total: <br>" + totalCost);
+	costCol.append(totalCost);
 
-/*
-	<div class="top-border row">
-		<div class="col-md-12">
-			<button type="submit" id="dinner_overview_button" class="print-button btn btn-primary">Print Full Recipe</button>
-		</div>
-	</div>
-</div> */
+	// Append the total cost column and the dinner images colum to the first row
+	firstRow.append(dinnerCol);
+	firstRow.append(costCol);
+
+	// Add the second row which contains the get full recipe button, 
+	// also populate the button column and append it to the row.
+	var secondRow = $("<div>").addClass("top-border row");
+	var buttonCol = $("<div>").addClass("col-md-12");
+	var printButton = $("<button>").addClass("print-button btn btn-primary").attr("id", "dinner_overview_button").html("Print Full Recipe");
+	buttonCol.append(printButton);
+	secondRow.append(buttonCol);
+
+	container.append(firstRow);
+	container.append(secondRow);
 
 	this.makeHidden = function(){
 		container.fadeOut(0, function() {

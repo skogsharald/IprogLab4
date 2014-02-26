@@ -70,5 +70,9 @@ $(function() {
 	window.startApp();
 	window.startConfirmDish();
 	window.startDinnerOverView();
+<<<<<<< HEAD
 	//window.startPrintPrep();
+=======
+/*	window.startPrintPrep();*/
+>>>>>>> Added the total cost column in the dinner images view.
 });
