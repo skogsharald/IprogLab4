@@ -11,7 +11,7 @@ var BackToEditDinnerView = function (container,model) {
 	colOne.append(colOneTitle);
 	row.append(colOne);
 	var colTwo = $("<div>").addClass("col-md-7");
-	var colTwoButton = $("<button>").addClass("btn btn-primary pull-right btn-middle").;
+	var colTwoButton = $("<button>").addClass("btn btn-primary pull-right btn-middle").attr("id", "backToDinner");
 	colTwoButton.html("<span class='glyphicon glyphicon-chevron-left'></span> Go back and edit dinner");
 	colTwo.append(colTwoButton);
 	row.append(colTwo);
