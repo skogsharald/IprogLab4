@@ -1,6 +1,8 @@
 var LeftColumnView = function (container,model) {
+	// this.removeIcons = [];
 
 	this.updateMenuTable = function(){
+		// this.removeIcons = [];
 		var menu = model.getFullMenu();
 		this.menuTable.find("#headerRow").nextAll().remove();
 		for (var i = 0; i < menu.length; i++) {
@@ -11,9 +13,11 @@ var LeftColumnView = function (container,model) {
 			var price = model.getDishPrice(menu[i].id);
 			tdPrice.html(price*model.getNumberOfGuests());
 			var button = $("<button>");
-			var span = $("<span>");
-			span.addClass('glyphicon glyphicon-remove');
-			tdPrice.append(span);
+			var removeIcon = $("<span>");
+			removeIcon.addClass('glyphicon glyphicon-remove');
+			removeIcon.attr('style', 'cursor:pointer');
+			// removeIcons.push([removeIcon, dish.id]);
+			tdPrice.append(removeIcon);
 			tr.append(tdName);
 			tr.append(tdPrice);
 			this.menuTable.append(tr);
