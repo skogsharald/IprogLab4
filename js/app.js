@@ -11,8 +11,13 @@ $(function() {
 	var leftColumnView = new LeftColumnView($("#leftColumnView"), model);
 	var leftColumnViewController = new LeftColumnViewController(leftColumnView, model);
 
-	var courseOverView = new CourseOverView($("#courseOverView"), model);
 	var courseOverViewController = new CourseOverViewController($("#courseOverView"), model);
+			// TODO: is this a good way?
+	window.newDishes = function(dishContainers){
+		courseOverViewController.newDishes(dishContainers);
+	}
+	var courseOverView = new CourseOverView($("#courseOverView"), model);
+
 
 	var searchBarView = new SearchBarView($('#searchBarView'), model);
 	var searchBarViewController = new SearchBarViewController(searchBarView, model);
@@ -60,10 +65,6 @@ $(function() {
 		courseOverView.changeDishes(dishes);
 	}
 
-	// TODO: is this a good way?
-	window.imageClick = function(container){
-		courseOverViewController.imageClick(container);
-	}
 
 	//window.startApp();
 	//window.startConfirmDish();

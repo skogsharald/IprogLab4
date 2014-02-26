@@ -1,6 +1,18 @@
 var CourseOverViewController = function (view, model) {
 
-	this.imageClick = function(container){
-		console.log(model.getDish(container.id));
+
+	function imageClick(event){
+		console.log(model.getDish(event.data.id));
+	}
+
+
+	// Set onClickListener to all the dishes
+	this.newDishes = function (dishContainers) {
+		for(var i = 0; i<dishContainers.length; i++){
+			container = dishContainers[i];
+			id = container.attr("id");
+			container.click({id:id}, imageClick);
+
+		}
 	}
 }

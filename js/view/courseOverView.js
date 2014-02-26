@@ -4,6 +4,9 @@ var CourseOverView = function (container,model) {
 	dishes = model.getAllDishes('starter');
 	var j;
 
+
+	var dishContainers = [];
+
 	var row = $("<div>").addClass("row").attr("style", "display:none");
 	for(var i=0;i<dishes.length;i++){
 		if(j>5){
@@ -20,19 +23,25 @@ var CourseOverView = function (container,model) {
 		var col = $("<div>").addClass("col-md-2");
 		dish = dishes[i]
 		newContainer = $("<div>").addClass("image-container").attr("id", dish.id);
-		newContainer.attr("onclick", "window.imageClick(this)");
 		imgTag = $("<img>").attr("src", "images/"+dish.image).addClass("grid-border").addClass("img-responsive").addClass("img-thumbnail");
 		newContainer.append(imgTag);
 		label = $("<p>").addClass("center-label").addClass("grid-border").addClass("grey").html(dish.name);
 		newContainer.append(label);
 		description = $("<p>").html(dish.description);
 		newContainer.append(description);
+
+		dishContainers.push(newContainer);
 		col.append(newContainer);
 		row.append(col);
 	}
+
+	// Navigation logic, must tell the courseOverViewController which dishes are being displayed at the moment
+	// as this will change when user searches or changes type of dish
+	window.newDishes(dishContainers);
 	this.coursesContainer.append(row);
 
 	this.changeDishes = function(dishes){
+		var dishContainers = [];
 		this.coursesContainer.html("");
 		var j;
 		row = $("<div>").addClass("row");
@@ -58,9 +67,14 @@ var CourseOverView = function (container,model) {
 			newContainer.append(label);
 			description = $("<p>").html(dish.description);
 			newContainer.append(description);
+
+			dishContainers.push(newContainer);
 			col.append(newContainer);
 			row.append(col);
 		}
+		// Navigation logic, must tell the courseOverViewController which dishes are being displayed at the moment
+		// as this will change when user searches or changes type of dish
+		window.newDishes(dishContainers);
 		this.coursesContainer.append(row);
 		this.coursesContainer.fadeOut(0, function() {
 			//Animation complete
