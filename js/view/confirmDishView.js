@@ -1,5 +1,7 @@
 var ConfirmDishView = function (container,model) {
-	this.dishToBeConfirmedContainer = container.find("#dishToBeConfirmedContainer");
+	this.confirmDishName = container.find("#confirmDishName");
+	this.confirmDishImage = container.find("#confirmDishImage")
+	this.confirmDishText = container.find("#confirmDishText");
 	this.ingredientsTable = container.find("#ingredientsTable");
 	this.tableTitle = container.find("#tableTitle");
 	this.preparationParagraph = container.find("#preparationParagraph");
@@ -12,24 +14,15 @@ var ConfirmDishView = function (container,model) {
 
 	this.generateDishHTML = function () {
 		this.dish = model.getDish(this.selectedDishId);
-		this.dishToBeConfirmedContainer.html("");
 
 
 		// The left part with the dish image
-		header = $("<h2>").html(this.dish.name);
-		image = $("<img>").attr("src", "images/"+this.dish.image);
-		desc = $("<p>").html("Lorem ipsum"); // Having preparations twice sounds redundant. This is a small text about the dish
-		backButton = $("<button>").addClass("btn btn-primary");
-		span = $("<span>").addClass("glyphicon glyphicon-chevron-left");
-		backButton.append(span);
-		backButton.html("Back to select dish");
-		this.dishToBeConfirmedContainer.append(header);
-		this.dishToBeConfirmedContainer.append(image);
-		this.dishToBeConfirmedContainer.append(desc);
-		this.dishToBeConfirmedContainer.append(backButton);
+		this.confirmDishName.html(this.dish.name);
+		this.confirmDishImage.attr("src", "images/"+this.dish.image);
+		this.confirmDishText.html("Lorem ipsum"); // Having preparations twice sounds redundant. This is a small text about the dish
 
 
-		// New column for table
+		// Leave room for the ingredients tab
 		this.generateIngredientsHTML();
 
 		this.preparationParagraph.html(dish.description);

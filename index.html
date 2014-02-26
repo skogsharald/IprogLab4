@@ -88,8 +88,13 @@
 			<div id="confirmDishView" class="no-display">
 				<div class="col-md-10 grid-border">
 					<div class="row" id="topViewContainer">
-						<div class="col-md-5" id="dishToBeConfirmedContainer">
-							<!-- DYNAMIC CONTENT HERE --></div>
+						<div class="col-md-5">
+							<!-- The following are filled with dynamic content -->
+							<h2 id="confirmDishName"></h2>   
+							<img id="confirmDishImage"/>
+							<p id="confirmDishText"></p>
+							<button class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left"></span> Back to select dish</button>
+							</div>
 							<div class="col-md-7 grid-border bg-warning">
 								<h2>Ingredients for <span id="tableTitle"></span> people:</h2>
 								<table class="table" id="ingredientsTable">
