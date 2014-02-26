@@ -49,7 +49,7 @@
 							<td>Pending</td>
 							<td>0.00</td>
 						</tr>
- -->					</table>
+					-->					</table>
 					<hr>
 					<h4 class="text-primary text-center">Total price: <span id="totalPrice"></span></h4>
 					<button id="confirmDinnerButton" class="btn btn-block btn-primary"><span class="glyphicon glyphicon-ok"></span> Confirm dinner</button>
@@ -87,73 +87,17 @@
 			<!-- confirmDishView -->
 			<div id="confirmDishView" class="no-display">
 				<div class="col-md-10 grid-border">
-					<div class="row">
-						<div class="col-md-5">
-							<h2>Lasagna</h2>
-							<img src="images/meatballs.jpg"/>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-								<button class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left"></span> Back to select dish</button>
-							</div>
+					<div class="row" id="topViewContainer">
+						<div class="col-md-5" id="dishToBeConfirmedContainer">
+							<!-- DYNAMIC CONTENT HERE --></div>
 							<div class="col-md-7 grid-border bg-warning">
-								<h2>Ingredients for 4 people:</h2>
-								<table class="table">
-									<tr>
-										<td>12 tbsp</td>
-										<td>Ägg, eller nåt</td>
-										<td>SEK</td>
-										<td>0.20</td>
-									</tr>
-									<tr>
-										<td>12</td>
-										<td>Något annat</td>
-										<td>SEK</td>
-										<td>0.20</td>
-									</tr>
-									<tr>
-										<td>12</td>
-										<td>Mer grejer</td>
-										<td>SEK</td>
-										<td>0.20</td>
-									</tr>
-									<tr>
-										<td>12</td>
-										<td>En till sak</td>
-										<td>SEK</td>
-										<td>0.20</td>
-									</tr>
-									<tr>
-										<td>12</td>
-										<td>hej</td>
-										<td>SEK</td>
-										<td>0.20</td>
-									</tr>
-									<tr>
-										<td>12</td>
-										<td>hej</td>
-										<td>SEK</td>
-										<td>0.20</td>
-									</tr>
-									<tr>
-										<td>12</td>
-										<td>hej</td>
-										<td>SEK</td>
-										<td>0.20</td>
-									</tr>
-									<tr>
-										<td>12</td>
-										<td>hej</td>
-										<td>SEK</td>
-										<td>0.20</td>
-									</tr>
+								<h2>Ingredients for <span id="tableTitle"></span> people:</h2>
+								<table class="table" id="ingredientsTable">
+									<!-- DYNAMIC CONTENT HERE -->
 								</table>
 								<hr>
-								<h4>SEK 77.20</h4>
-								<button class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Confirm dish</button>
+								<h4>SEK <span id="dishCost"></span></h4>
+								<button class="btn btn-primary" id="confirmDishButton"><span class="glyphicon glyphicon-ok"></span> Confirm dish</button>
 								<br>
 								<br>
 							</div>
@@ -161,19 +105,14 @@
 						<div class="row">
 							<div class="col-md-7">
 								<h1>Preparation</h1>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-									consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-									cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-									proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-								</div>
+								<p id="preparationParagraph"></p>
 							</div>
-						</div> 
+						</div>
 					</div>
-					<!-- confirmDishView end -->
-					<!-- backToEditDinnerView -->
-					<div id="backToEditDinnerView" class="no-display">
+				</div>
+				<!-- confirmDishView end -->
+				<!-- backToEditDinnerView -->
+				<div id="backToEditDinnerView" class="no-display">
 						<!-- <div class="bg-warning row grid-border">
 							<div class="col-md-3 col-md-offset-1"><h3>My Dinner: 4 people</h3></div>
 							<div class="col-md-7"><button class="btn btn-primary pull-right btn-middle"><span class="glyphicon glyphicon-chevron-left"></span> Go back and edit dinner</button></div>

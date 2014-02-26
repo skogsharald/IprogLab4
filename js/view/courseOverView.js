@@ -1,12 +1,13 @@
 var CourseOverView = function (container,model) {
 	this.coursesContainer = container.find("#coursesContainer");
+	container.attr("style", "display:block");
 	dishes = model.getAllDishes('starter');
 	var j;
 
 
 	var dishContainers = [];
 
-	var row = $("<div>").addClass("row");
+	var row = $("<div>").addClass("row").attr("style", "display:none");
 	for(var i=0;i<dishes.length;i++){
 		if(j>5){
 			this.coursesContainer.append(row);
@@ -22,9 +23,9 @@ var CourseOverView = function (container,model) {
 		var col = $("<div>").addClass("col-md-2");
 		dish = dishes[i]
 		newContainer = $("<div>").addClass("image-container").attr("id", dish.id);
-		imgTag = $("<img>").attr("src", "images/"+dish.image).addClass("grid-border").addClass("img-responsive").addClass("img-thumbnail");
+		imgTag = $("<img>").attr("src", "images/"+dish.image).addClass("grid-border img-responsive img-thumbnail");
 		newContainer.append(imgTag);
-		label = $("<p>").addClass("center-label").addClass("grid-border").addClass("grey").html(dish.name);
+		label = $("<p>").addClass("center-label").addClass("grid-border grey").html(dish.name);
 		newContainer.append(label);
 		description = $("<p>").html(dish.description);
 		newContainer.append(description);
@@ -59,7 +60,7 @@ var CourseOverView = function (container,model) {
 			var col = $("<div>").addClass("col-md-2");
 			dish = dishes[i]
 			newContainer = $("<div>").addClass("image-container").attr("id", dish.id);
-			newContainer.attr("onclick", "window.imageClick(this)");
+			newContainer.attr("style", "cursor:pointer");
 			imgTag = $("<img>").attr("src", "images/"+dish.image).addClass("grid-border").addClass("img-responsive").addClass("img-thumbnail");
 			newContainer.append(imgTag);
 			label = $("<p>").addClass("center-label").addClass("grid-border").addClass("grey").html(dish.name);
@@ -75,10 +76,10 @@ var CourseOverView = function (container,model) {
 		// as this will change when user searches or changes type of dish
 		window.newDishes(dishContainers);
 		this.coursesContainer.append(row);
-		container.fadeOut(0, function() {
+		this.coursesContainer.fadeOut(0, function() {
 			//Animation complete
 		});
-		container.fadeIn(600, function() {
+		this.coursesContainer.fadeIn(600, function() {
 			//Animation complete
 		});
 
@@ -91,7 +92,7 @@ var CourseOverView = function (container,model) {
 	}
 
 	this.makeVisible = function(){
-		container.fadeIn(1000, function() {
+		row.fadeIn(1000, function() {
 			//Animation complete
 		});
 	}

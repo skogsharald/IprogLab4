@@ -44,7 +44,7 @@ $(function() {
 		courseOverView.makeHidden();
 		searchBarView.makeHidden()
 		confirmDishView.makeVisible();
-		//confirmDishView.selectedDish(selectedDish);
+		confirmDishView.setSelectedDish(selectedDish);
 	}
 
 	window.startDinnerOverView = function(){
