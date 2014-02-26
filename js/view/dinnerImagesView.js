@@ -45,12 +45,14 @@ var DinnerImagesView = function (container,model) {
 	// also populate the button column and append it to the row.
 	var secondRow = $("<div>").addClass("top-border row");
 	var buttonCol = $("<div>").addClass("col-md-12");
-	var printButton = $("<button>").addClass("print-button btn btn-primary").attr("id", "dinner_overview_button").html("Print Full Recipe");
+	var printButton = $("<button>").addClass("print-button btn btn-primary").attr("id", "dinnerOverViewButton").html("Print Full Recipe");
 	buttonCol.append(printButton);
 	secondRow.append(buttonCol);
 
 	container.append(firstRow);
 	container.append(secondRow);
+	
+	this.dinnerOverViewButton = container.find("#dinnerOverViewButton");
 
 	this.makeHidden = function(){
 		container.fadeOut(0, function() {

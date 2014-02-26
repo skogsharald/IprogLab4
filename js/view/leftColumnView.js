@@ -11,13 +11,7 @@ var LeftColumnView = function (container,model) {
 			tdName.html(menu[i].name);
 			var tdPrice = $("<td>");
 			var price = model.getDishPrice(menu[i].id);
-			tdPrice.html(price*model.getNumberOfGuests());
-			var button = $("<button>");
-			var removeIcon = $("<span>");
-			removeIcon.addClass('glyphicon glyphicon-remove');
-			removeIcon.attr('style', 'cursor:pointer');
-			// removeIcons.push([removeIcon, dish.id]);
-			tdPrice.append(removeIcon);
+			tdPrice.html(price*model.getNumberOfGuests() +" SEK");
 			tr.append(tdName);
 			tr.append(tdPrice);
 			this.menuTable.append(tr);
@@ -32,7 +26,7 @@ var LeftColumnView = function (container,model) {
 	this.menuTable = container.find("#menuTable");
 
 	this.numberOfGuests.html(model.getNumberOfGuests());
-	this.totalPrice.html(model.getTotalMenuPrice());
+	this.totalPrice.html(model.getTotalMenuPrice() + " SEK");
 	
 	this.updateMenuTable();
 
@@ -41,7 +35,7 @@ var LeftColumnView = function (container,model) {
 	this.update = function(arg){
 		this.updateMenuTable();
 		this.numberOfGuests.html(model.getNumberOfGuests());
-		this.totalPrice.html(model.getTotalMenuPrice());
+		this.totalPrice.html(model.getTotalMenuPrice() + " SEK");
 	}
 
 	this.makeHidden = function(){

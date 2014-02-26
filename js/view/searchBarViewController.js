@@ -16,7 +16,6 @@ var SearchBarViewController = function(view, model) {
 		var filters = view.searchField.val();
 		var type = view.selectTypes.val().toLowerCase();
 
-
 		// Navigation logic, show new dishes
 		window.changeCoursesInCourseOverView(model.getAllDishes(type, filters));
 

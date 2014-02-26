@@ -18,6 +18,10 @@ var BackToEditDinnerView = function (container,model) {
 
 	container.append(row);
 
+	this.backToDinnerButton = container.find("#backToDinner");
+
+	model.addObserver(this);
+
 	this.makeHidden = function(){
 		container.fadeOut(0, function() {
 			//Animation complete
@@ -28,5 +32,9 @@ var BackToEditDinnerView = function (container,model) {
 		container.fadeIn(1000, function() {
 			//Animation complete
 		});
+	}
+
+	this.update = function(arg){
+		colOneTitle.html("My Dinner: " + model.getNumberOfGuests() + " people");
 	}
 }

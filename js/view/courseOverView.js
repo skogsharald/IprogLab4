@@ -1,13 +1,12 @@
 var CourseOverView = function (container,model) {
 	this.coursesContainer = container.find("#coursesContainer");
-	container.attr("style", "display:block");
 	dishes = model.getAllDishes('starter');
 	var j;
 
 
 	var dishContainers = [];
 
-	var row = $("<div>").addClass("row").attr("style", "display:none");
+	var row = $("<div>").addClass("row");
 	for(var i=0;i<dishes.length;i++){
 		if(j>5){
 			this.coursesContainer.append(row);
@@ -76,10 +75,10 @@ var CourseOverView = function (container,model) {
 		// as this will change when user searches or changes type of dish
 		window.newDishes(dishContainers);
 		this.coursesContainer.append(row);
-		this.coursesContainer.fadeOut(0, function() {
+		container.fadeOut(0, function() {
 			//Animation complete
 		});
-		this.coursesContainer.fadeIn(600, function() {
+		container.fadeIn(600, function() {
 			//Animation complete
 		});
 
@@ -92,7 +91,7 @@ var CourseOverView = function (container,model) {
 	}
 
 	this.makeVisible = function(){
-		row.fadeIn(1000, function() {
+		container.fadeIn(1000, function() {
 			//Animation complete
 		});
 	}

@@ -18,7 +18,6 @@ $(function() {
 	}
 	var courseOverView = new CourseOverView($("#courseOverView"), model);
 
-
 	var searchBarView = new SearchBarView($('#searchBarView'), model);
 	var searchBarViewController = new SearchBarViewController(searchBarView, model);
 
@@ -26,10 +25,10 @@ $(function() {
 	var confirmDishViewController = new ConfirmDishViewController(confirmDishView, model);
 
 	var backToEditDinnerView = new BackToEditDinnerView($('#backToEditDinnerView'), model);
-	var backToEditDinnerViewController = new BackToEditDinnerViewController(confirmDishView, model);
+	var backToEditDinnerViewController = new BackToEditDinnerViewController(backToEditDinnerView, model);
 
 	var dinnerImagesView = new DinnerImagesView($('#dinnerImagesView'), model);
-	var dinnerImagesViewController = new DinnerImagesViewController(confirmDishView, model);
+	var dinnerImagesViewController = new DinnerImagesViewController(dinnerImagesView, model);
 
 	var printPrepView = new PrintPrepView($('#printPrepView'), model);
 
@@ -71,8 +70,21 @@ $(function() {
 		courseOverViewController.imageClick(container);
 	}
 
-	window.startApp();
-	window.startConfirmDish();
-	window.startDinnerOverView();
+	window.backToEditDinner = function(){
+		backToEditDinnerView.makeHidden();
+		dinnerImagesView.makeHidden();
+		printPrepView.makeHidden();
+		searchBarView.makeVisible();
+		courseOverView.makeVisible();
+		leftColumnView.makeVisible();
+	}
+
+	// window.startApp();
+	// window.startConfirmDish();
+	// window.startDinnerOverView();
 	//window.startPrintPrep();	
+	// window.startApp();
+	// window.startConfirmDish();
+	// window.startDinnerOverView();
+	// window.startPrintPrep();	
 });
