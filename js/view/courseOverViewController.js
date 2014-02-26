@@ -2,8 +2,10 @@ var CourseOverViewController = function (view, model) {
 
 
 	function imageClick(event){
-		console.log(model.getDish(event.data.id));
+		// More navigation logic to move on to next screen
+		window.startConfirmDish(event.data.id);
 	}
+
 
 
 	// Set onClickListener to all the dishes

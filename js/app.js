@@ -41,10 +41,11 @@ $(function() {
 		$("body").removeClass("background-image");
 	}
 
-	window.startConfirmDish = function(){
+	window.startConfirmDish = function(selectedDish){
 		courseOverView.makeHidden();
 		searchBarView.makeHidden()
 		confirmDishView.makeVisible();
+		confrimDishView.selectedDish(selectedDish);
 	}
 
 	window.startDinnerOverView = function(){
