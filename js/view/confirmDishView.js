@@ -2,10 +2,13 @@ var ConfirmDishView = function (container,model) {
 	this.confirmDishName = container.find("#confirmDishName");
 	this.confirmDishImage = container.find("#confirmDishImage")
 	this.confirmDishText = container.find("#confirmDishText");
+	this.confirmDishBackButton = container.find("#confirmDishBackButton");
+	this.confirmDishButton = container.find("#confirmDishButton");
 	this.ingredientsTable = container.find("#ingredientsTable");
 	this.tableTitle = container.find("#tableTitle");
 	this.preparationParagraph = container.find("#preparationParagraph");
 	this.dishCost = container.find("#dishCost");
+
 
 	this.setSelectedDish = function (selectedDishId) {
 		this.selectedDishId = parseInt(selectedDishId);
@@ -40,7 +43,6 @@ var ConfirmDishView = function (container,model) {
 			tableRow = $("<tr>")
 			quantity = $("<td>").html(ingredient.quantity * guests + " " +ingredient.unit);
 			nameTD = $("<td>").html(ingredient.name);
-			console.log(nameTD);
 			currency = $("<td>").html("SEK");
 			price = $("<td>").html(ingredient.price);
 			tableRow.append(quantity, nameTD, currency, price);
